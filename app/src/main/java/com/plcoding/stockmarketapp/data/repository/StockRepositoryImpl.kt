@@ -19,9 +19,9 @@ import javax.inject.Singleton
 
 @Singleton
 class StockRepositoryImpl @Inject constructor(
-    val db: StockDatabase,
-    val api: StockApi,
-    val companyListingsParser: CSVParser<CompanyListing>
+    private val db: StockDatabase,
+    private val api: StockApi,
+    private val companyListingsParser: CSVParser<CompanyListing>
 ): StockRepository {
     override suspend fun getCompanyListings(
         fetchFromRemote: Boolean,
